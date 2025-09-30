@@ -34,18 +34,25 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name == null ? "Nombre" : variables.name}</h1>
-          <h2>${
-            variables.lastName == null ? "Apellido" : variables.lastName
-          }</h2>
+          <h1>${variables.name == null ? "Nombre" : variables.name} ${
+    variables.lastName == null ? "Apellido" : variables.lastName
+  }</h1>
           <h2>${variables.role == null ? "Puesto" : variables.role}</h2>
           <h3>${variables.city == null ? "Ciudad" : variables.city}</h3>
           <h3>${variables.country == null ? "Pais" : variables.country}</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/"><i class="fab fa-instagram"></i></a></li>
+          <ul class=${variables.socialMediaPosition}>
+            <li><a href="https://twitter.com/${
+              variables.twitter == null ? "jsv356" : variables.twitter
+            }"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github == null ? "jsvasquez356" : variables.github
+            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/${
+              variables.linkedin == null ? "ower" : variables.linkedin
+            }"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${
+              variables.instagram == null ? "jsv356" : variables.instagram
+            }"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
